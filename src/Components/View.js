@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Popup from "./Popup";
 
-const API = "http://localhost:3000";
+const API = "http://localhost:3001";
 
 function View() {
 	const [items, setItems] = useState([]);

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const API = "http://localhost:3000";
+const API = "http://localhost:3001";
 
 function Create() {
 	const [name, setName] = useState("");
