@@ -4,10 +4,9 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 const InventoryItem = require("./models/InventoryItem");
 const Location = require("./models/Location");
-require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
@@ -16,10 +15,13 @@ app.use(express.static(path.join(__dirname, "build")));
 
 // connect to db
 mongoose
-	.connect(process.env.MONGODB_URI, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	})
+	.connect(
+		"mongodb+srv://maneesh:testpassword123@cluster0.1ceja.mongodb.net/shopifyChallenge?retryWrites=true&w=majority",
+		{
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		}
+	)
 	.then(() => {
 		console.log("Connected to MongoDB");
 	})
